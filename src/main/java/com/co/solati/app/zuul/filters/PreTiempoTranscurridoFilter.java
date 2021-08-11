@@ -1,4 +1,4 @@
-package com.formacionbdi.springboot.app.zuul.filters;
+package com.co.solati.app.zuul.filters;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,9 +11,9 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
 @Component
-public class PostTiempoTranscurridoFilter extends ZuulFilter{
+public class PreTiempoTranscurridoFilter extends ZuulFilter{
 	
-	private static Logger log = LoggerFactory.getLogger(PostTiempoTranscurridoFilter.class);
+	private static Logger log = LoggerFactory.getLogger(PreTiempoTranscurridoFilter.class);
 
 	@Override
 	public boolean shouldFilter() {
@@ -26,20 +26,17 @@ public class PostTiempoTranscurridoFilter extends ZuulFilter{
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
 		
-		log.info("Entrando a post filter");
-				
-		Long tiempoInicio = (Long) request.getAttribute("tiempoInicio");
-		Long tiempoFinal = System.currentTimeMillis();
-		Long tiempoTranscurrido = tiempoFinal - tiempoInicio;
+		log.info(String.format("%s request enrutado a %s", request.getMethod(), request.getRequestURL().toString()));
 		
-		log.info(String.format("Tiempo transcurrido en segundos %s seg.", tiempoTranscurrido.doubleValue()/1000.00));
-		log.info(String.format("Tiempo transcurrido en mileseg %s ms.", tiempoTranscurrido));
+		Long tiempoInicio = System.currentTimeMillis();
+		request.setAttribute("tiempoInicio", tiempoInicio);
+		
 		return null;
 	}
 
 	@Override
 	public String filterType() {
-		return "post";
+		return "pre";
 	}
 
 	@Override

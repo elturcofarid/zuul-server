@@ -1,4 +1,4 @@
-package com.formacionbdi.springboot.app.zuul.oauth;
+package com.co.solati.app.zuul.oauth;
 
 import java.util.Arrays;
 
@@ -35,7 +35,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/api/security/oauth/**").permitAll()
+		http.authorizeRequests().antMatchers("/api/segurity/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/api/productos/listar", "/api/items/listar", "/api/usuarios/usuarios").permitAll()
 		.antMatchers(HttpMethod.GET, "/api/productos/ver/{id}", 
 				"/api/items/ver/{id}/cantidad/{cantidad}", 
