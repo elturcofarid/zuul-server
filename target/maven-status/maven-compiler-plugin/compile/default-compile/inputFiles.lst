@@ -1,0 +1,4 @@
+/home/master/solati/zuul-server/src/main/java/com/co/solati/app/zuul/oauth/ResourceServerConfig.java
+/home/master/solati/zuul-server/src/main/java/com/co/solati/app/zuul/filters/PreTiempoTranscurridoFilter.java
+/home/master/solati/zuul-server/src/main/java/com/co/solati/app/SpringbootServicioZuulServerApplication.java
+/home/master/solati/zuul-server/src/main/java/com/co/solati/app/zuul/filters/PostTiempoTranscurridoFilter.java

@@ -1,0 +1,4 @@
+com/co/solati/app/SpringbootServicioZuulServerApplication.class
+com/co/solati/app/zuul/oauth/ResourceServerConfig.class
+com/co/solati/app/zuul/filters/PreTiempoTranscurridoFilter.class
+com/co/solati/app/zuul/filters/PostTiempoTranscurridoFilter.class
